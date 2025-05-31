@@ -1,10 +1,44 @@
 ---
 import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
-import { CardGrid, Card, LinkButton } from "@astrojs/starlight/components";
+import { Steps, Tabs, TabItem } from "@astrojs/starlight/components";
 ---
+
+<style>
+  .larger-text {
+    font-size: 1.3rem;
+    line-height: 1.7;
+  }
+</style>
 
 <StarlightPage frontmatter={{
   title: "Install",
+  template: "splash",
+  hero: {
+    title: "Install",
+  }
 }}>
+  <Tabs>
+    <TabItem label="Geometry Dash">
+      <Steps>
+        <ol class="larger-text">
+          <li>Launch <strong>Geometry Dash</strong> on your device.</li>
+          <li>Open the <strong>Geode menu</strong> by clicking the <em>Geode</em> button at the bottom of the main menu.</li>
+          <li>Use the search bar to find <strong>"Geometry Dash: Surge"</strong>.</li>
+          <li>Click the <strong>Install</strong> button next to the mod to install it.</li>
+          <li>After installation, restart Geometry Dash to activate the mod.</li>
+        </ol>
+      </Steps>
+    </TabItem>
 
+    <TabItem label="Website">
+      <Steps>
+        <ol class="larger-text">
+          <li>Visit <a href="https://geode-sdk.org/mods/omgrod.geometry-dash-surge" target="_blank" rel="noopener noreferrer">the mod's official page</a>.</li>
+          <li>Click the <strong>Download</strong> button located on the right-hand side of the page.</li>
+          <li>Move the downloaded file <code>omgrod.geometry-dash-surge.geode</code> to your Geometry Dash mods folder, typically found at <code>your/gd/path/geode/mods</code>.</li>
+          <li>Launch Geometry Dash and enjoy the mod!</li>
+        </ol>
+      </Steps>
+    </TabItem>
+  </Tabs>
 </StarlightPage>
