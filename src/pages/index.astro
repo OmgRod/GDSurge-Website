@@ -1,0 +1,134 @@
+---
+import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
+import { CardGrid, Card, LinkButton } from "@astrojs/starlight/components";
+---
+
+<style>
+  .section {
+    padding: 4rem 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 0.5rem;
+    background: linear-gradient(to right, transparent, #ccc 30%, #ccc 70%, transparent);
+    background-position: 0 100%;
+    background-size: 100% 2px;
+    background-repeat: no-repeat;
+    text-align: center;
+  }
+
+  .section p {
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    margin-left: 1.5rem;
+    list-style-type: disc;
+  }
+
+  ul li {
+    margin-bottom: 0.5rem;
+  }
+</style>
+
+<StarlightPage frontmatter={{
+  title: "Home",
+  template: "splash",
+  hero: {
+    title: "Geometry Dash: Surge",
+    image: {
+      file: {
+        src: "logo.png",
+        width: 336,
+        height: 336,
+        format: "png"
+      }
+    },
+    actions: [
+      { text: "Learn More", link: "#features", icon: "down-arrow" },
+      { text: "Install", link: "/download", icon: "right-arrow" }
+    ]
+  }
+}}>
+
+<section id="about" class="section">
+  <h2>What is GD: Surge?</h2>
+  <p><strong>Geometry Dash: Surge</strong> is a Geometry Dash fangame built with Geode. It includes new main levels, a new shop, and TONS of lore...</p>
+</section>
+
+<section id="features" class="section">
+  <h2>Features</h2>
+  <CardGrid>
+    <Card title="Classic Levels">
+      Six original-style levels inspired by the Geometry Dash legacy, crafted with custom visuals and tweaks.
+    </Card>
+    <Card title="Platformer Mode">
+      Side-scrolling action with five unique levels (and five more planned). Platforming meets rhythm.
+    </Card>
+    <Card title="Vault Codes">
+      Discover hidden codes throughout the game. Think deeper, search harder—what will you unlock?
+    </Card>
+    <Card title="Shopkeeper">
+      A new shopkeeper with exclusive items and an upgraded interface, inspired by GD Lunar/Odyssey.
+    </Card>
+  </CardGrid>
+</section>
+
+<section id="roadmap" class="section">
+  <h2>Development Roadmap</h2>
+  <p>The project is active and evolving. Expect new levels, polish updates, and community-driven features. If you're curious about what's next, check out the full roadmap:</p>
+  <LinkButton href="https://www.notion.so/omgrod/Geometry-Dash-Surge-1f3e014e65e38004a013d4329ac255d6?pvs=4" icon="right-arrow">View Roadmap</LinkButton>
+</section>
+
+<section id="incompatibilities" class="section">
+  <h2>Compatibility</h2>
+  <p>To avoid save corruption or conflicts, take note of the following:</p>
+  <ul>
+    <li><strong>GDPS Switcher:</strong> Will reset save data each time you switch versions.</li>
+    <li><strong>Other Fangame Mods:</strong> Not compatible if installed in the same directory.</li>
+  </ul>
+</section>
+
+<section id="credits" class="section">
+  <h2>Credits</h2>
+  <CardGrid>
+    <Card title="Development Team">
+      <ul>
+        <li>OmgRod (Lead Developer)</li>
+        <li>MobMasterMind (Icons)</li>
+        <li>BitZ (GD World Code)</li>
+        <li>Capeling (Other fangame code)</li>
+        <li>Alphalaneous (Logo Design)</li>
+        <li>Jasmine (Bindings)</li>
+      </ul>
+    </Card>
+    <Card title="Level Creators">
+      <ul>
+        <li>OmgRod</li>
+        <li>Flingus</li>
+        <li>MobMasterMind</li>
+      </ul>
+    </Card>
+    <Card title="Music">
+      <ul>
+        <li>Boom Kitty - Badland, Tomb, Detour</li>
+        <li>Waterflame - Unstable Geometry</li>
+        <li>dj-Nate - The Beginning of Time, Thermodynamix</li>
+      </ul>
+    </Card>
+  </CardGrid>
+</section>
+
+<section id="feedback" class="section">
+  <h2>Found a Bug?</h2>
+  <p>Surge is open to community input. If you discover an issue or want to suggest a feature, open a ticket on our GitHub issue tracker.</p>
+  <LinkButton href="https://github.com/OmgRod/GD-Surge/issues" icon="pencil">Submit Feedback</LinkButton>
+</section>
+
+</StarlightPage>
